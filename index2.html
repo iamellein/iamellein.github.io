@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    
+</head>
+<body>
+    <form class="registration-form">
+        <h2>Registration Form</h2>
+        <div class="form-group">
+            <label for="name">Enter Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="address">Enter Address:</label>
+            <textarea id="address" name="address"></textarea>
+        </div>
+        <div class="form-group">
+            <h3>Select Game:</h3>
+            <td class="checkbox-group">
+                <label>
+                    <input type="checkbox" 
+                           name="game"
+                           value="hockey"> Hockey</label>
+                <label>
+                    <input type="checkbox" 
+                           name="game"  
+                           value="football"> Football</label>
+                <label>
+                    <input type="checkbox"
+                           name="game"
+                           value="badminton"> Badminton</label>
+                <label> 
+                    <input type="checkbox"
+                           name="game"
+                           value="cricket"> Cricket</label>
+                <label>
+                    <input type="checkbox" 
+                           name="game" 
+                        value="volleyball"> Volleyball</label>
+            </td>
+        </div>
+        <div class="form-group">
+            <h3>Gender:</h3>
+            <td class="radio-group">
+                <label> 
+                    <input type="radio"
+                           name="gender" 
+                           value="male"> Male</label>
+                <label>
+                    <input type="radio" 
+                           name="gender" 
+                           value="female"> Female</label>
+                </td>
+            </th>
+        <td class="form-group">
+            <h3 for="age">Select your age:</h3>
+            <select id="age" name="age">
+                <option value="">Select</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+            </select>
+        </td>
+        <div class="form-group">
+            <label for="photo">Select Photo:</label>
+            <input type="file" id="photo" name="photo">
+        </div>
+        <div class="form-actions">
+            <input type="button" value="Click Me">
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit Form">
+        </div>
+    </form>
+</body>
+</html>
