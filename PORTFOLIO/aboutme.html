@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellein Ugay | Portfolio</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #005792;
+            color: #f0f4f8;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background:#0f3460;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #f0f4f8;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+       
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #4a90e2,#0f3460);
+            border-radius: 10px;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #a8d0db;
+        }
+
+        .hero-img img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            border: 4px solid #ffcc00;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #005792;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .stat-item h2 {
+            font-size: 1.8rem;
+            color: #e0f7ff;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: #b3daff;
+        }
+        .partners {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .partners h3 {
+            font-size: 2rem;
+            color: #e0f7ff;
+        }
+
+        .partners p {
+            color: #b3daff;
+            margin-top: 10px;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .logos img {
+            width: 70px;
+            opacity: 0.8;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .logos img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .about-me {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 20px;
+            background: rgba(0, 51, 102, 0.9);
+            border-radius: 10px;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .about-me h2 {
+            font-size: 2rem;
+            color: #ffcc00;
+        }
+
+        .about-me p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #a8d0db;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 204, 0, 0.1);
+            animation: float 6s infinite alternate ease-in-out;
+        }
+
+        .circle-1 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: -20px;
+            animation-delay: 1s;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 10%;
+            right: -40px;
+            animation-delay: 2s;
+        }
+
+        
+        .table-section {
+            padding: 20px;
+            background: rgba(0, 51, 102, 0.9);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .table-section h3 {
+            color: #ffcc00;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #f0f4f8;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid rgba(0, 51, 102, 0.9);
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        table th {
+            background-color: rgba(0, 51, 102, 0.9);
+            color: #ffcc00;
+        }
+
+        table tr:nth-child(even) {
+            background-color: rgba(0, 51, 102, 0.9);
+        }
+
+        table tr:hover {
+            background-color:rgba(0, 51, 102, 0.9);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(20px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-img img {
+                width: 250px;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            .about-me {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .about-me h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .table-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero-img img {
+                width: 200px;
+                height: auto;
+            }
+
+            .about-me h2 {
+                font-size: 1.6rem;
+            }
+
+            .table-section h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About me</a></li>
+                <li><a href="features.html">Feature</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-text">
+            <h1>Welcome to My Webpage</h1>
+            <p>I'm a college student passionate about creating beautiful and functional websites.</p>
+        </div>
+        <div class="hero-img">
+            <img src="berii.png" alt="Ellein's Photo">
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-me">
+        <div>
+            <h2>About Me</h2>
+            <p>I am passionate about sports and the arts. Whether on the field or behind a canvas, I thrive in environments that challenge me and ignite my creativity. I envision blending technology, sports, and art to create innovative solutions that inspire others.</p>
+        </div>
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </section>
+
+    <!-- Favorites & Skills Table Section -->
+    <section id="skills" class="table-section">
+        <h3>My Favorites & Skills</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Favorite Food</td><td>Samyang (2x spicy)</td></tr>
+                <tr><td>Favorite Movie/Book</td><td>Harry Potter series</td></tr>
+                <tr><td>Favorite Tools</td><td>Photoshop, GitHub</td></tr>
+                <tr><td>Favorite Music</td><td>Lo-fi, Pop</td></tr>
+                <tr><td>Skills</td><td>Sports, sketching, painting, graphic design</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <h2>BS Information Technology</h2>
+            <p>2nd Year</p>
+        </div>
+        <div class="stat-item">
+            <h2>Semester</h2>
+            <p>1st</p>
+        </div>
+    </section>
+
+    
+    <section class="partners">
+        <h3>Connect with Me</h3>
+        <p>Follow me on my social media accounts or reach out to me via email!</p>
+        <div class="logos">
+            <a href="https://www.facebook.com/elleinugay" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/yourusername" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/yourusername" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+      
+    </section>
+</div>
+
+</body>
+</html>
+
