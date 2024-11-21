@@ -58,7 +58,7 @@
             background-color: #1db954;
         }
 
-        /* Header Section */
+      
         header {
             background-color: #101c9f;
             padding: 80px 0;
@@ -76,14 +76,14 @@
             font-size: 20px;
         }
 
-        /* Main Container */
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px;
         }
 
-        /* Search Bar */
+        
         .search-container {
             text-align: center;
             margin-bottom: 50px;
@@ -115,7 +115,7 @@
             background-color: #1ed760;
         }
 
-        /* Results Section */
+        
         .results {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -153,7 +153,7 @@
             margin-bottom: 10px;
         }
 
-        /* Play Button */
+        
         .play-button {
             background-color: #1db954;
             color: white;
@@ -168,7 +168,7 @@
             background-color: #1ed760;
         }
 
-        /* Audio Controls */
+   
         .audio-controls {
             display: flex;
             justify-content: center;
@@ -190,7 +190,7 @@
             color: #1db954;
         }
 
-        /* Footer Section */
+       
         footer {
             background-color: #121212;
             color: #fff;
@@ -211,7 +211,7 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+ 
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -222,24 +222,24 @@
         </ul>
     </nav>
 
-    <!-- Header Section -->
+ 
     <header>
         <h1>Music Search</h1>
         <p>Discover, listen to, and enjoy your favorite music tracks</p>
     </header>
 
-    <!-- Main Content -->
+    
     <div class="container">
-        <!-- Search Section -->
+        
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Search for a song or artist">
             <button id="search-button">Search</button>
         </div>
 
-        <!-- Results Section -->
+       
         <div id="results" class="results"></div>
 
-        <!-- Audio Player Controls -->
+   
         <div id="audio-controls" class="audio-controls" style="display: none;">
             <button id="rewind">⏪</button>
             <button id="play-pause">Play</button>
@@ -247,7 +247,7 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
+  
     <footer>
         <p>&copy; 2024 Music Search. All rights reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
@@ -269,7 +269,7 @@
 
         function displayResults(results) {
             const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = ''; // Clear previous results
+            resultsDiv.innerHTML = '';
 
             if (results.length === 0) {
                 resultsDiv.innerHTML = '<p>No results found.</p>';
@@ -284,7 +284,7 @@
                     <img src="${item.artworkUrl100}" alt="${item.trackName}">
                     <span><strong>${item.trackName}</strong><br>by ${item.artistName}</span>
                     <br>
-                    <button class="play-button" onclick="playPreview('${item.previewUrl}')">Play Preview</button>
+                    <button class="play-button" onclick="playPreview('${item.previewUrl}')">Play</button>
                 `;
                 resultsDiv.appendChild(div);
             });
