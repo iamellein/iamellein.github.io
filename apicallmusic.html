@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Search | Discover Your Favorite Tunes</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f3460;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+        }
+
+       
+        nav {
+            background-color: #172e8d;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(231, 231, 231, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #1db954;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #101c9f;
+            padding: 80px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #1db954;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        /* Search Bar */
+        .search-container {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        input {
+            padding: 12px;
+            width: 50%;
+            border: none;
+            border-radius: 50px;
+            background-color: #ffffff;
+            color: #020202;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #1db954;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1ed760;
+        }
+
+        /* Results Section */
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            padding: 20px 0;
+        }
+
+        .result-item {
+            background-color: #282828;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .result-item img {
+            border-radius: 12px;
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .result-item span {
+            display: block;
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* Play Button */
+        .play-button {
+            background-color: #1db954;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: #1ed760;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .audio-controls button {
+            background: transparent;
+            border: none;
+            font-size: 18px;
+            color: #fff;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .audio-controls button:hover {
+            color: #1db954;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #1db954;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Music Search</h1>
+        <p>Discover, listen to, and enjoy your favorite music tracks</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Search Section -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a song or artist">
+            <button id="search-button">Search</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results"></div>
+
+        <!-- Audio Player Controls -->
+        <div id="audio-controls" class="audio-controls" style="display: none;">
+            <button id="rewind">⏪</button>
+            <button id="play-pause">Play</button>
+            <button id="fast-forward">⏩</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Music Search. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        let currentAudio = null;
+        let audioElement = null;
+        let playbackInterval = null;
+        let duration = 0;
+        let currentTime = 0;
+
+        document.getElementById('search-button').addEventListener('click', () => {
+            const query = document.getElementById('search-input').value;
+            fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(query)}&limit=10`)
+                .then(response => response.json())
+                .then(data => displayResults(data.results))
+                .catch(error => console.error('Error:', error));
+        });
+
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // Clear previous results
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<p>No results found.</p>';
+                return;
+            }
+
+            results.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'result-item';
+
+                div.innerHTML = `
+                    <img src="${item.artworkUrl100}" alt="${item.trackName}">
+                    <span><strong>${item.trackName}</strong><br>by ${item.artistName}</span>
+                    <br>
+                    <button class="play-button" onclick="playPreview('${item.previewUrl}')">Play Preview</button>
+                `;
+                resultsDiv.appendChild(div);
+            });
+        }
+
+        function playPreview(previewUrl) {
+            if (audioElement) {
+                audioElement.pause();
+                audioElement = null;
+                document.getElementById('audio-controls').style.display = 'none';
+            }
+
+            audioElement = new Audio(previewUrl);
+            audioElement.play();
+
+            document.getElementById('audio-controls').style.display = 'flex';
+            document.getElementById('play-pause').textContent = 'Pause';
+        }
+
+        document.getElementById('play-pause').addEventListener('click', togglePlayPause);
+        document.getElementById('rewind').addEventListener('click', () => audioElement.currentTime -= 10);
+        document.getElementById('fast-forward').addEventListener('click', () => audioElement.currentTime += 10);
+
+        function togglePlayPause() {
+            if (audioElement.paused) {
+                audioElement.play();
+                document.getElementById('play-pause').textContent = 'Pause';
+            } else {
+                audioElement.pause();
+                document.getElementById('play-pause').textContent = 'Play';
+            }
+        }
+    </script>
+
+</body>
+</html>

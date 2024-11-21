@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset and Box Sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: transparent;
+            animation: slideDown 1s ease;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #7a5cf3;
+        }
+
+        /* Movie Card Styling */
+        .movie-card {
+            display: flex;
+            max-width: 1000px;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            position: relative;
+            margin-top: 70px; /* Add margin-top to create space for navbar */
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-content {
+            flex: 1;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+        }
+
+        .year {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .text-content:hover .description {
+            color: #333;
+        }
+
+        .owner {
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .explore-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .explore-btn:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .image-content {
+            flex: 1;
+            background: linear-gradient(to top right, rgba(200, 50, 50, 0.05), rgba(255, 255, 255, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-content:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(50, 29, 29, 0.721);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-content:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .movie-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text-content {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .image-content {
+                border-left: none;
+                border-top: 1px solid rgba(84, 45, 45, 0.852);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">ALL ABOUT ME</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="#">Feature</a></li>
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="movie-card">
+        <div class="text-content">
+            <p class="year">2024</p>
+            <h1 class="title">About Me</h1>
+            <p class="description">
+                <strong>Hi everyone!</strong> I’m Princess Ellein Serrano Ugay, but you can call me Ellein for short. 
+                I’m currently a second-year student pursuing a Bachelor of Science in Information Technology at the University of the Immaculate Conception. 
+                I’m passionate about learning how technology shapes our world, and I aim to sharpen my skills in programming, software development, and digital innovation.
+                While my academic journey is focused on technology, I’m also enthusiastic about creative problem-solving, teamwork, and continuously improving my knowledge in various tech-related fields. 
+                My goal is to eventually specialize in areas such as web development, mobile applications, or cybersecurity. I’m excited about the future of tech and look forward to contributing to this dynamic field.
+            </p>
+            <p class="owner"><strong>Developer:</strong> Ellein Ugay</p>
+            <div class="buttons">
+                <button class="explore-btn">▶ More</button>
+            </div>
+        </div>
+        <div class="image-content">
+            <img src="berii.png" alt="berii">
+        </div>
+    </div>
+
+</body>
+</html>
